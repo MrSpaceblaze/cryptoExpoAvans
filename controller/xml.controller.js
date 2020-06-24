@@ -1,11 +1,11 @@
 var StellarSdk =require('stellar-sdk');
 const { Networks } = require('stellar-sdk');
-var config = require("../config/wallets.json").XML
-const server = new StellarSdk.Server('config.network');
+const config = require("../config/wallets.json").XML
+const server = new StellarSdk.Server(config.network, {allowHttp: true});
 
 function pay(wallet, cost, done) {
-    const destinationaccount = await server.loadAccount(wallet.publicKey)
-    const fee = await server.fetchBaseFee();
+    server.loadAccount(wallet.publicKey).then(account => {
+    server.fetchBaseFee().then(fee => {
 
     const sourceKeypair = StellarSdk.Keypair.fromSecret(wallet.secret);
     const sourcePublicKey = sourceKeypair.publicKey();
@@ -25,13 +25,16 @@ function pay(wallet, cost, done) {
         transaction.sign(sourceKeypair);
 
         try{
-            const transactionResult = await server.submitTransaction(transaction);
+            server.submitTransaction(transaction).then(transactionResult => {
             console.log(JSON.stringify(transactionResult));
             done(true,transactionResult)
+            })
         }
         catch(e) {
             done(false, e);
         }
+        })
+    })
 }
 
 module.exports = {pay}

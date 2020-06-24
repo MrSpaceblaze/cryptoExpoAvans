@@ -20,7 +20,13 @@ console.log(boxen(name,{
     borderStyle: 'double'
 }));
 
+app.use(bodyParser.json());
+
 const routes = require('./routes/crypto.routes');
+
+app.get("/youFool", (req, res) =>{
+    res.status(418).send("You fool, you shouldn't have paid for it");
+})
 
 app.use('/crypto',routes);
 
@@ -28,7 +34,7 @@ app.use('*', (req, res) => {
     res.status(404).json({
         status: 404,
         endpoint: req.originalUrl, 
-        message: req.originalUrl + "was not found", 
+        message: req.originalUrl + " was not found", 
         datetime: new Date().toISOString()})
 })
 

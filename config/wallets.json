@@ -8,5 +8,12 @@
         "address":"<Insert address here>",
         "chain": "ropsten"
     },
-    "XML":"<Insert address here>"
+    "XML": {
+        "address":"<Insert address here>",
+        "network":"testnet.stellar.org"
+    },
+    "MOL":{
+        "apikey":"test_kF9VmMdKpekNbvP9qTCSJAB5wJrQWA",
+        "currency":"EUR"
+    }
 }

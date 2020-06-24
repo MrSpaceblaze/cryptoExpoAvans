@@ -24,3 +24,13 @@ routes.post("/pay/ETH/:cost", controller.etherTransaction);
  * @param {number} cost.required - Username of user
  */
 routes.post("/pay/XML/:cost", controller.lumenTransaction);
+
+/**
+ * pays a certain cost in Stellar Lumens
+ * @route POST / pay/MOL/:cost
+ * @group Pay
+ * @param {number} cost.required - Username of user
+ */
+routes.post("/pay/MOL/:cost",controller.mollieTransaction);
+
+module.exports = routes;

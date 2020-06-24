@@ -1,6 +1,7 @@
 var BTC = require("./btc.controller")
 var ETH = require("./eth.controller")
 var XML = require("./xml.controller")
+var MOL = require("./mol.controller");
 
 var ApiResponse = require("./models/api.response");
 
@@ -65,8 +66,20 @@ function bitcoinTransaction(req,res) {
     }
 }
 
+function mollieTransaction(req,res) {
+    console.log(req.params)
+    if(req.params.cost>0) {
+        console.log(req.body)
+        console.log(req.headers)
+        MOL.molTransaction(res, req.body.productname,req.body.cost);
+    } else {
+        res.status(417).json(new ApiResponse(417, "Cost must be greater than 0")).end();
+    }
+}
+
 module.exports = {
     lumenTransaction,
     etherTransaction,
-    bitcoinTransaction
+    bitcoinTransaction,
+    mollieTransaction
 }
