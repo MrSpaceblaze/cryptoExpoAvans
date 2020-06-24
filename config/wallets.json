@@ -1,0 +1,12 @@
+{
+    "BTC":{
+        "address":"",
+        "network":"testnet",
+        "dryrun":true
+    },
+    "ETH":{
+        "address":"<Insert address here>",
+        "chain": "ropsten"
+    },
+    "XML":"<Insert address here>"
+}
