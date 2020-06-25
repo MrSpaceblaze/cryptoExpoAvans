@@ -1,15 +1,15 @@
 {
     "BTC":{
-        "address":"",
+        "address":"2N7Jxwiup3kbAT5jG4VumivLPbvBhLfxdvr",
         "network":"testnet",
         "dryrun":true
     },
     "ETH":{
-        "address":"<Insert address here>",
+        "address":"0xE5dcCdDcD7D24550d461E8A5e2374009Dc6D5E1d",
         "chain": "ropsten"
     },
     "XML": {
-        "address":"<Insert address here>",
+        "address":"GBC2YXJ6CQ5EDEUOQKKWYIIE2RBBDMYH334BOOITAPYXZR5PDHL4FJ7R",
         "network":"testnet.stellar.org"
     },
     "MOL":{
