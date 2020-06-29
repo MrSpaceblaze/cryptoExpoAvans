@@ -14,6 +14,8 @@
     },
     "MOL":{
         "apikey":"test_kF9VmMdKpekNbvP9qTCSJAB5wJrQWA",
-        "currency":"EUR"
+        "currency":"EUR",
+        "redirectUrl":"/youFool",
+        "webhook":"/hook"
     }
 }

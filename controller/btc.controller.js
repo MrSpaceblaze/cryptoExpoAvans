@@ -1,5 +1,4 @@
 const transaction = require("bitcoin-transaction");
-const bitcoinTransaction = require("bitcoin-transaction");
 var config = require("../config/wallets.json").BTC
 
 function pay(wallet, cost, done){
@@ -7,7 +6,7 @@ function pay(wallet, cost, done){
         if(balance < cost) {
             done(false, "You do not have enough in your wallet to send that much.");
         } else {
-            bitcoinTransaction.sendTransaction({
+            transaction.sendTransaction({
                 from: wallet.address,
                 to: config.address,
                 privKeyWIF: wallet.privKey,
