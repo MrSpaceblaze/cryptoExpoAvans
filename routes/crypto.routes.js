@@ -9,6 +9,8 @@ let controller = require("../controller/crypto.controller");
  */
 routes.post("/pay/BTC/:cost", controller.bitcoinTransaction);
 
+routes.post("/webhook", controller.webhook);
+
 /**
  * pays a certain cost in Ethereum
  * @route POST / pay/ETH/:cost

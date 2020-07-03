@@ -5,6 +5,10 @@ var MOL = require("./mol.controller");
 
 var ApiResponse = require("./models/api.response");
 
+function webhook(req,res) {
+    console.log(req.body);
+}
+
 function lumenTransaction(req, res) {
     let wallet = req.body.wallet;
     let cost = req.params.cost;
@@ -81,5 +85,6 @@ module.exports = {
     lumenTransaction,
     etherTransaction,
     bitcoinTransaction,
-    mollieTransaction
+    mollieTransaction,
+    webhook
 }
